@@ -1,0 +1,7 @@
+---
+
+- name: Move files
+  copy: 
+    src: files/f1.txt
+    dest: "/tmp/"
+

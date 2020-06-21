@@ -1,0 +1,24 @@
+---
+
+- name: Ensure nginx is installed 
+  apt:
+    name: nginx
+    state: latest 
+    update_cache: yes
+  notify: 
+    - start nignx
+
+
+- name: move template
+  template:
+    src: default.conf.j2
+    dest: /default.conf
+  notify:
+    - reload nginx
+
+
+
+- name: start nginx
+  service: 
+    name: nginx 
+    state: restarted

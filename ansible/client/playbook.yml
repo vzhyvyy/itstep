@@ -1,0 +1,19 @@
+--- 
+
+- hosts: all
+  become: yes 
+  become_method: sudo
+  roles: 
+    - transfer_files
+
+
+- hosts: docker
+  become: yes 
+  become_method: sudo
+  roles: 
+    - nginx
+
+
+
+
+    
